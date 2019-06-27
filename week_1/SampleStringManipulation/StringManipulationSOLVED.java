@@ -7,8 +7,6 @@ package week_1.SampleStringManipulation;
 public class StringManipulationSOLVED {
 
     public static boolean detectCapitalUse(String word) {
-        char[] string = 
-
         boolean isCap = true;
         boolean keepChecking = true;
         char[] string = word.toCharArray();
