@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * SOLVED - This would only work if the input is only lowercase alphabet letters and not spaces.
  */
-public class ValidAnagramSUCCESS {
+public class ValidAnagramSOLVED {
     public boolean isAnagram(String s, String t) {
         boolean isAna = true;
         //dump and sort both strings into two char arrays
