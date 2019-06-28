@@ -4,6 +4,7 @@ package week_1.SampleStringManipulation;
  * This solution took a really long time and I wasn't close to solving it,
  * so I moved on.
  * There has to be a better way to do it than what I did so far.
+ * Should change to deal with the sizes maybe??
  */
 public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
@@ -14,6 +15,7 @@ public class LongestCommonPrefix {
         //dump all of the strings in strs into the rows of arr
         for(int row = 0; row < strs.length; row++) {
             arr[row] = Character.toCharArray(strs[row]);
+
         }
 
         char temp = arr[0][0];
