@@ -5,11 +5,9 @@ import java.util.List;
 
 
 /**
- * SOLVED - I THINK
- * For some reason it failed the submission on leetcode,
- * but the test case that it said it failed passed on my end.
+ * SOLVED
  */
-public class ValidPalindromeSOLVEDmaybe {
+public class ValidPalindromeSOLVED {
     public static boolean isPalindrome(String s) {
         boolean isPal = true;
 
@@ -18,7 +16,7 @@ public class ValidPalindromeSOLVEDmaybe {
         //add only letters to an arraylist
         List newArr = new ArrayList();
         for(char c : string) {
-            if(Character.isLetter(c)) {
+            if(Character.isLetter(c) || Character.isDigit(c)) {
                 newArr.add(Character.toLowerCase(c));
             }
         }
