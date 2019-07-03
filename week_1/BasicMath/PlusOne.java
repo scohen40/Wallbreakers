@@ -5,15 +5,18 @@ package week_1.BasicMath;
  */
 public class PlusOne {
     public int[] plusOne(int[] digits) {
-        //create the new array
-        int[] arr = new int[digits.length];
+
+        //dump all of the digits into one Integer but first putting them into a string and then an Integer.
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < digits.length; i++) {
-            arr[i] = digits[i];
+            sb.append(digits[i]);
         }
+        Integer num = Integer.parseInt(sb.toString());
 
-        //add 1 to the last integer of the array
-        arr[arr.length - 1]++;
+        num++;          //increment by 1
 
+        //dump into a new array
+        int[] arr = num;
 
         return arr;
     }
