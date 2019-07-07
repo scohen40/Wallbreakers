@@ -3,8 +3,7 @@ package week_2.MultiSets;
 import java.util.*;
 
 /**
- * Got this error while running on leetcode: Memory Limit Exceeded
- * Will come back to this!
+ * SOLVED - The runtime is super inefficient and I would like to speed it up!
  */
 public class SortCharactersByFrequency {
     public String frequencySort(String s) {
@@ -15,35 +14,34 @@ public class SortCharactersByFrequency {
 
         //create a map/multi and put all of the character in the array with counts as well as a list to put all the unique chars
         Map<Character, Integer> map = new HashMap<>();
-        List<Character> uniqueChars = new ArrayList<>();
+
         for (char c : chars) {
             Character C = c;
             if (!map.containsKey(C)) {
                 map.put(C, 1);
-                uniqueChars.add(C);
             } else {
                 Integer newCount = map.get(C) + 1;
                 map.put(C, newCount);
             }
         }
 
-        //loop through the chars and add in by frequency
-        StringBuilder sb = new StringBuilder();
-        int i = 0;
-        while(sb.length() < s.length()) {
-            for(Character c : uniqueChars) {
-                if(map.get(c) == i) {
-                    for(int j = 0; j < i; j++) {
-                        sb.append(c);
-                        i++;
-                    }
-                } else {
-                    i++;
-                }
-            }
-        }
+        Map<Character, Integer> sortedMap = new LinkedHashMap<>();
 
-        return sb.toString();
+        //sort the map
+        map.entrySet().stream()
+                .sorted(Map.Entry.<Character, Integer>comparingByValue().reversed())
+                .forEachOrdered(entry -> sortedMap.put(entry.getKey(), entry.getValue()));
+
+        //loop through the sorted map and add to string builder by frequency
+        List<StringBuilder> finalSB = new ArrayList<>();
+        finalSB.add(new StringBuilder());
+        sortedMap.forEach((character, count) -> {
+            for(int i = 0; i < count; i++) {
+                finalSB.get(0).append(character);
+            }
+        });
+
+        return finalSB.get(0).toString();
     }
 
 }
