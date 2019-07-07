@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * SOLVED - The runtime is super inefficient and I would like to speed it up!
  */
-public class SortCharactersByFrequency {
+public class SortCharactersByFrequencySOLVED {
     public String frequencySort(String s) {
         //put all the characters in an array
         char[] chars = s.toCharArray();
